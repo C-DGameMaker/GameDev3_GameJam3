@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Rigidbody playerRB;
     [SerializeField] float playerSpeed;
-    [SerializeField] float jumpHeight;
+    [SerializeField] float jumpForce;
     [SerializeField] Vector2 movementInput;
     void Start()
     {
@@ -33,5 +33,10 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 move = new Vector3(movementInput.x, 0, movementInput.y) * playerSpeed * Time.deltaTime;
         playerRB.MovePosition(playerRB.position + move);
+    }
+
+    public void Jump()
+    {
+        if (Mathf.Abs(playerRB.linearVelocity.y) < 0.01f) playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
