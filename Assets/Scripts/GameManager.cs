@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public DialogueManager dialogueManager;
+    public UIManager uiManager;
+
+    public static GameManager instance;
+
     void Start()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+
     }
 }
