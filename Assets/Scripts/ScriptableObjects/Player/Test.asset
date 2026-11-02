@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94b1c5b8e4d0594a865f24282655084, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  characterName: 
+  characterName: Not Charlie
   characterTalkingSprite: {fileID: 0}
-  currentHealth: 0
-  maxHealth: 0
+  currentHealth: 10
+  maxHealth: 15
   attack: 0
-  speed: 0
   defense: 0
-  luck: 0
