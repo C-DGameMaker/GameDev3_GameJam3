@@ -6,15 +6,13 @@ using UnityEngine;
 public class SaveNLoadManager : MonoBehaviour
 {
     public PlayerData playerData;
-
-    private void Start()
+    public void PlayerData()
     {
-        if(playerData == null)
+        if (playerData == null)
         {
             playerData = ScriptableObject.CreateInstance<PlayerData>();
+            LoadData();
         }
-
-        
     }
 
     public void SaveData()
@@ -37,6 +35,7 @@ public class SaveNLoadManager : MonoBehaviour
         }
         else
         {
+            playerData.ResetData();
             return;
         }
     }

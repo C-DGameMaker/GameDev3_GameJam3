@@ -7,7 +7,16 @@ public class PlayerData : BaseCharacterData
     public int currentHealth;
     public int maxHealth;
     public int attack;
-    public int speed;
     public int defense;
-    public int luck;
+
+    public void ResetData()
+    {
+        characterName = "Mario";
+        maxHealth = 5;
+        currentHealth = maxHealth;
+        attack = 1;
+        defense = 0;
+
+        
+    }
 }
