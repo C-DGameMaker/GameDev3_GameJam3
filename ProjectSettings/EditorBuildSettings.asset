@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/GameplayScenes/MainMenuScene.unity
+    guid: 252272f651b57bb459882c5bdc555e78
+  - enabled: 1
+    path: Assets/Scenes/Charlie'sTestScene.unity
+    guid: 6b530fda201d50444a135c2bb9224634
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
