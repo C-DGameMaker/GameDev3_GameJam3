@@ -11,12 +11,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float playerSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] Vector2 movementInput;
+
+    PlayerData playerData;
     void Start()
     {
        if(playerRB == null)
-        {
+       {
             playerRB = GetComponent<Rigidbody>();
-        }
+       }
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
