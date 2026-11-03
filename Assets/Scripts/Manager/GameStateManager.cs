@@ -40,7 +40,7 @@ public class GameStateManager : MonoBehaviour
 
             case GameStates.init:
                 SetGameStates(GameStates.mainMenu);
-                ServiceHubManager.Instance.saveNLoadManager.PlayerData();
+                ServiceHubManager.Instance.saveDataManager.PlayerData();
                 break;
 
             case GameStates.mainMenu:

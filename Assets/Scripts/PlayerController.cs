@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
             playerRB = GetComponent<Rigidbody>();
        }
 
-        playerData = ServiceHubManager.Instance.saveNLoadManager.playerData;
     }
 
     public void OnMove(InputAction.CallbackContext context)
