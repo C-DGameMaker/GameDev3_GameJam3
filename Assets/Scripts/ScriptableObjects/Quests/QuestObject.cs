@@ -7,6 +7,8 @@ using UnityEngine;
 public class QuestObject : ScriptableObject
 {
     public string questName;
+    [TextArea(3, 6)]
+    public string questDescription;
     public bool questCompleted;
 
     public List<QuestObjective> objectives = new List<QuestObjective>();
