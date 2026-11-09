@@ -5,12 +5,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Varibles")]
+    [Header("Player Movement Variables")]
 
     [SerializeField] Rigidbody playerRB;
     [SerializeField] float playerSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] Vector2 movementInput;
+
+    [Header("Player Interaction Variables")]
+    [SerializeField] bool canMove;
 
     PlayerData playerData;
     void Start()
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour
             playerRB = GetComponent<Rigidbody>();
        }
 
+        canMove = true;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -34,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePlayerMovement()
     {
+        if (canMove == false) return;
         Vector3 move = new Vector3(movementInput.x, 0, movementInput.y) * playerSpeed * Time.deltaTime;
         playerRB.MovePosition(playerRB.position + move);
     }
