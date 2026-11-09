@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(string[] sentences)
     {
-        GameManager.instance.uiManager.ShowDialoguePanel();
+        GameManager.Instance.uiManager.ShowDialoguePanel();
         inDialogue = true;
 
         foreach (string currentString in sentences)
@@ -40,14 +40,14 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogueQueue.Count > 0)
         {
-            GameManager.instance.uiManager.SetDialogueText(dialogueQueue.Dequeue());
+            GameManager.Instance.uiManager.SetDialogueText(dialogueQueue.Dequeue());
         }
     }
 
     private void EndDialogue()
     {
         dialogueQueue.Clear();
-        GameManager.instance.uiManager.HideDialoguePanel();
+        GameManager.Instance.uiManager.HideDialoguePanel();
         inDialogue = false;
     }
 }
