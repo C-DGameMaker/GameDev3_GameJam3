@@ -4,11 +4,11 @@ public class ButtonScript : MonoBehaviour
 {
    public void SaveButton()
     {
-        ServiceHubManager.Instance.saveDataManager.SaveData();
+        GameManager.Instance.saveDataManager.SaveData();
     }
 
     public void LoadButton()
     {
-        ServiceHubManager.Instance.saveDataManager.LoadData();
+        GameManager.Instance.saveDataManager.LoadData();
     }
 }

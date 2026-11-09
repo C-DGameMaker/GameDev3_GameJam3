@@ -2,19 +2,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
+    [Header("Managers")]
     public DialogueManager dialogueManager;
     public UIManager uiManager;
+    public SaveDataManager saveDataManager;
+    public GameStateManager gameStateManager;
+    public EventSystemHandler eventSystemHandler;
 
-    public static GameManager instance;
-
-    void Start()
+    private void Awake()
     {
-        instance = this;
-    }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
 
-
-    void Update()
-    {
-
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
