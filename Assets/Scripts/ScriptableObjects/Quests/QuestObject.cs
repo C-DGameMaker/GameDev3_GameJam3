@@ -10,6 +10,7 @@ public class QuestObject : ScriptableObject
     public bool questCompleted;
 
     public List<QuestObjective> objectives = new List<QuestObjective>();
+    public QuestReward reward;
 
     public void CompleteQuest()
     {
@@ -23,6 +24,14 @@ public class QuestObjective
     public string objectiveDescription;
     public QuestObjectiveType type;
     public int requiredAmount;
+}
+
+[System.Serializable]
+public class QuestReward
+{
+    public string rewardDescription;
+    public int gold;
+    public List<string> itemIds;
 }
 
 public enum QuestObjectiveType
