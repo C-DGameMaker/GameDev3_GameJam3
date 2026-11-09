@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     [Header("Camera Controller")]
     public Transform playerCharacter;
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0, 3, -7);
     public float distanceFromPlayer;
 
     private void Start()
@@ -14,7 +14,6 @@ public class CameraController : MonoBehaviour
             Debug.Log("Player is null");
         }
 
-        offset = transform.position;
     }
 
     private void Update()
