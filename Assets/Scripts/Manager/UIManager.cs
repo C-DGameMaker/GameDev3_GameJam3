@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -26,22 +27,29 @@ public class UIManager : MonoBehaviour
         dialogueText.text = dialogueString;
     }
 
+    public void HideAllUI()
+    {
+        mainMenuUI.SetActive(false);
+        pauseUI.SetActive(false);
+        gameObject.SetActive(false);
+        inventoryUI.SetActive(false);
+    }
+
     public void Play()
     {
-        gamePlayUI.SetActive(true);
-        mainMenuUI.SetActive(false);
+        SceneManager.LoadScene("GameplayScene");
     }
 
     public void Pause()
     {
+        HideAllUI();
         pauseUI.SetActive(true);
-        gamePlayUI.SetActive(false);
     }
 
     public void ShowIntventory()
     {
+        HideAllUI();
         inventoryUI.SetActive(true);
-        gamePlayUI.SetActive(false);
     }
 
     public void Quit()
