@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector2 movementInput;
 
     [Header("Player Interaction Variables")]
-    [SerializeField] bool canMove;
+    public bool canMove;
 
     PlayerData playerData;
     void Start()
