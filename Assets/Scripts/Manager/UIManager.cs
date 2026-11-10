@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject mainMenuUI;
+    public GameObject settingsUI;
     public GameObject pauseUI;
     public GameObject gamePlayUI;
     public GameObject inventoryUI;
@@ -38,6 +39,12 @@ public class UIManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("GameplayScene");
+    }
+
+    public void Settings()
+    {
+        HideAllUI();
+        settingsUI.SetActive(true);
     }
 
     public void Pause()
