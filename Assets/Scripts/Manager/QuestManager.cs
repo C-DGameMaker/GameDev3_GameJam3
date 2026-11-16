@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
     public QuestObject[] allQuests;
 
     private Dictionary<string, ActiveQuest> activeQuests = new();
-    private HashSet<string> completedQuestIds = new();
+    private HashSet<string> completedQuestName = new();
 
     public void Awake()
     {
@@ -19,46 +19,48 @@ public class QuestManager : MonoBehaviour
         questInstance = this;
     }
 
-    public bool CanAcceptQuest(QuestObject def)
+    public bool CanAcceptQuest(QuestObject quest)
     {
-        if (activeQuests.ContainsKey(def.questID)) return false;
-        if (completedQuestIds.Contains(def.questID)) return false;
+        if (activeQuests.ContainsKey(quest.questName)) return false;
+        if (completedQuestName.Contains(quest.questName)) return false;
 
-        foreach (string reqId in def.requiredCompletedQuests)
+        foreach (string completedQuestName in quest.requiredCompletedQuests)
         {
-            if (!completedQuestIds.Contains(reqId)) return false;
+            if (!this.completedQuestName.Contains(completedQuestName)) return false;
         }
         return true;
     }
 
-    public void AcceptQuest(QuestObject def)
+    public void AcceptQuest(QuestObject quest)
     {
-        if (!CanAcceptQuest(def)) return;
+        if (!CanAcceptQuest(quest)) return;
 
-        var active = new ActiveQuest(def);
-        activeQuests[def.questID] = active;
+        ActiveQuest accepetedQuest = new ActiveQuest(quest);
+        activeQuests[quest.questName] = accepetedQuest;
     }
 
     private void CompleteQuest(ActiveQuest quest)
     {
         quest.completed = true;
-        activeQuests.Remove(quest.questDef.questID);
-        completedQuestIds.Add(quest.questDef.questID);
+        activeQuests.Remove(quest.activeQuest.questName);
+        completedQuestName.Add(quest.activeQuest.questName);
+
+        // Get rewards (Figure out how)
     }
 }
 
 public class ActiveQuest
 {
-    public QuestObject questDef;
+    public QuestObject activeQuest;
     public List<ActiveObjective> objectives = new();
     public bool completed;
 
     public bool AllObjectivesComplete => objectives.All(o => o.isComplete);
 
-    public ActiveQuest(QuestObject def)
+    public ActiveQuest(QuestObject quest)
     {
-        questDef = def;
-        foreach(var objDef in def.objectives)
+        activeQuest = quest;
+        foreach(var objDef in quest.objectives)
         {
             objectives.Add(new ActiveObjective(objDef));
         }

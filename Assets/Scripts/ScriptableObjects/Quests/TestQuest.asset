@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a24296cc793ee438908efd93ae3b97, type: 3}
   m_Name: TestQuest
   m_EditorClassIdentifier: Assembly-CSharp::QuestObject
-  questID: 
+  questID: 1
   questName: 
   questDescription: 
   questCompleted: 0
-  objectives: []
+  objectives:
+  - objectiveDescription: Kill 5 things
+    type: 0
+    requiredAmount: 5
   reward:
     rewardDescription: 
     gold: 0
