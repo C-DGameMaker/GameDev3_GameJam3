@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: TestQuest1
   m_EditorClassIdentifier: Assembly-CSharp::QuestObject
   questName: Quest 1
-  questDescription: 
-  objectives: []
+  questDescription: momomomlohouigfhiuhghjlhvj
+  objectives:
+  - objectiveDescription: 
+    type: 3
+    requiredAmount: 0
   reward:
     rewardDescription: 
     gold: 0

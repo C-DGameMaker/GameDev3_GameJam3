@@ -364,7 +364,19 @@ MonoBehaviour:
     m_ActionId: 9a28af44-d3c0-4d68-a7c0-9b0b1dfedcdb
     m_ActionName: 'Movement/Inventory[/Keyboard/i]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4236256159738676990}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8a6d0467-6939-490e-a39e-182762128b1a
     m_ActionName: 'Movement/Interact[/Keyboard/e]'
   - m_PersistentCalls:

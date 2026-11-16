@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Interaction Variables")]
     public bool canMove;
 
-    PlayerData playerData;
+    [SerializeField] IInteractable targetInteractable;
     void Start()
     {
        if(playerRB == null)
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    #region Movement
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
@@ -53,9 +54,6 @@ public class PlayerController : MonoBehaviour
         float turn = turnInput * turnSpeed * Time.deltaTime;
 
         playerRB.MoveRotation(playerRB.rotation * Quaternion.Euler(0, turn, 0));
-
-
-
     }
 
     private void HandlePlayerMovement()
@@ -69,4 +67,36 @@ public class PlayerController : MonoBehaviour
     {
         if (Mathf.Abs(playerRB.linearVelocity.y) < 0.01f) playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
+    #endregion
+
+    #region Interactable
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IInteractable foundInteractable))
+        {
+            targetInteractable = foundInteractable;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out IInteractable foundInteractable))
+        {
+            targetInteractable = null;
+        }
+    }
+
+    public void OnInteract(InputAction.CallbackContext callback)
+    {
+        if (callback.performed)
+        {
+            if (targetInteractable != null)
+            {
+                targetInteractable.Interact();
+            }
+        }
+
+    }
+    #endregion
 }
