@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Turn Input: " + turnInput);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         HandlePlayerMovement();
         HandlePlayerTurning();
@@ -53,14 +53,17 @@ public class PlayerController : MonoBehaviour
         float turn = turnInput * turnSpeed * Time.deltaTime;
 
         playerRB.MoveRotation(playerRB.rotation * Quaternion.Euler(0, turn, 0));
+
+
+
     }
 
     private void HandlePlayerMovement()
     {
         if (canMove == false) return;
-        Vector3 move = new Vector3(movementInput.x, 0, movementInput.y) * playerSpeed * Time.deltaTime;
+        Vector3 move = (transform.forward * movementInput.y + transform.right * movementInput.x) * playerSpeed * Time.deltaTime;
         playerRB.MovePosition(playerRB.position + move);
-    }
+    }        
 
     public void Jump()
     {
