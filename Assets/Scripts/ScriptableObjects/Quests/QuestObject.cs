@@ -37,10 +37,9 @@ public class QuestReward
 
 public enum QuestObjectiveType
 {
-    Kill,
     Collect,
     Talk,
-    Reach,
-    Interact
+    Interact,
+    Attack
 }
 
