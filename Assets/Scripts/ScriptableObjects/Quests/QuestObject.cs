@@ -9,15 +9,14 @@ public class QuestObject : ScriptableObject
     public string questName;
     [TextArea(3, 6)]
     public string questDescription;
-    public bool questCompleted;
 
     public List<QuestObjective> objectives = new List<QuestObjective>();
     public QuestReward reward;
 
-    public void CompleteQuest()
-    {
-        questCompleted = true;
-    }
+    [Header("Prerequisites")]
+    public List<string> requiredCompletedQuests;
+    public int requiredPlayerLevel;
+
 }
 
 [System.Serializable]
