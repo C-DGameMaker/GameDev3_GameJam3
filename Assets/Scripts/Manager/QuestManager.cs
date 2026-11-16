@@ -17,6 +17,11 @@ public class QuestManager : MonoBehaviour
         if (questInstance != null) Destroy(this.gameObject);
 
         questInstance = this;
+
+        if(allQuests == null)
+        {
+            Debug.Log("No Quests");
+        }
     }
 
     public bool CanAcceptQuest(QuestObject quest)

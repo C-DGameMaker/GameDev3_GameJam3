@@ -15,7 +15,6 @@ public class QuestObject : ScriptableObject
 
     [Header("Prerequisites")]
     public List<string> requiredCompletedQuests;
-    public int requiredPlayerLevel;
 
 }
 
