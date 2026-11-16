@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Quest Data", menuName = "Quest")]
 public class QuestObject : ScriptableObject
 {
+    public string questID;
     public string questName;
     [TextArea(3, 6)]
     public string questDescription;
@@ -13,6 +14,10 @@ public class QuestObject : ScriptableObject
 
     public List<QuestObjective> objectives = new List<QuestObjective>();
     public QuestReward reward;
+
+    [Header("Prerequisites")]
+    public List<string> requiredCompletedQuests;
+    public int requiredPlayerLevel;
 
     public void CompleteQuest()
     {
