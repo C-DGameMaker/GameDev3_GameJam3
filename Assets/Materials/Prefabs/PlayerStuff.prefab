@@ -383,6 +383,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f88b05eb-9f7b-48ac-8dfc-163eba158d16
     m_ActionName: 'Movement/Attack[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4236256159738676990}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnTurn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 923fca1b-2c43-4c9d-b706-af5232d70b9e
+    m_ActionName: 'Movement/Turn[/Keyboard/leftArrow,/Keyboard/rightArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -464,10 +480,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf6267f064a69f42ae6aa79cd8b0375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  playerRB: {fileID: 0}
+  playerRB: {fileID: 2320587394350352096}
   playerSpeed: 5
   jumpForce: 2.5
   movementInput: {x: 0, y: 0}
+  turnInput: 0
+  turnSpeed: 150
   canMove: 0
 --- !u!1001 &7243861354119166481
 PrefabInstance:

@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float playerSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] Vector2 movementInput;
+    private float turnInput;
+    public float turnSpeed = 150f;
 
     [Header("Player Interaction Variables")]
     public bool canMove;
@@ -31,9 +34,25 @@ public class PlayerController : MonoBehaviour
         movementInput = context.ReadValue<Vector2>();
     }
 
+    public void OnTurn(InputAction.CallbackContext context)
+    {
+        turnInput = context.ReadValue<float>();
+        Debug.Log("Turn Input: " + turnInput);
+    }
+
     public void Update()
     {
         HandlePlayerMovement();
+        HandlePlayerTurning();
+    }
+
+    public void HandlePlayerTurning()
+    {
+        if (canMove == false) return;
+
+        float turn = turnInput * turnSpeed * Time.deltaTime;
+
+        playerRB.MoveRotation(playerRB.rotation * Quaternion.Euler(0, turn, 0));
     }
 
     private void HandlePlayerMovement()
