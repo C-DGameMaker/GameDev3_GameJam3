@@ -16,12 +16,12 @@ public class CameraController : MonoBehaviour
 
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 cameraOffset = Quaternion.Euler(0f, 0f, 0f) * offset * distanceFromPlayer;
 
         transform.position = playerCharacter.position + cameraOffset;
 
-        transform.LookAt(playerCharacter);
+        transform.LookAt(playerCharacter.position + Vector3.up * 1.5f);
     }
 }
