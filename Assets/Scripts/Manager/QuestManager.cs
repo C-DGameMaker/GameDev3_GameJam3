@@ -9,8 +9,8 @@ public class QuestManager : MonoBehaviour
     public static QuestManager questInstance { get; private set; }
     public QuestObject[] allQuests;
 
-    private Dictionary<string, ActiveQuest> activeQuests = new();
-    private HashSet<string> completedQuestName = new();
+    public Dictionary<string, ActiveQuest> activeQuests = new();
+    public HashSet<string> completedQuestName = new();
 
     public void Awake()
     {
@@ -42,6 +42,7 @@ public class QuestManager : MonoBehaviour
 
         ActiveQuest accepetedQuest = new ActiveQuest(quest);
         activeQuests[quest.questName] = accepetedQuest;
+        Debug.Log("AcceptedQuest");
     }
 
     private void CompleteQuest(ActiveQuest quest)
