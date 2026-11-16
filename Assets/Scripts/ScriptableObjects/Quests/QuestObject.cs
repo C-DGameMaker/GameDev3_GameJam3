@@ -31,7 +31,6 @@ public class QuestReward
 {
     public string rewardDescription;
     public int gold;
-    public List<string> itemIds;
 }
 
 public enum QuestObjectiveType

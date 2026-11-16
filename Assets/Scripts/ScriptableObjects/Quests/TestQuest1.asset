@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a24296cc793ee438908efd93ae3b97, type: 3}
   m_Name: TestQuest1
   m_EditorClassIdentifier: Assembly-CSharp::QuestObject
-  questName: 
+  questName: Quest 1
   questDescription: 
   objectives: []
   reward:
     rewardDescription: 
     gold: 0
-    itemIds: []
   requiredCompletedQuests: []
-  requiredPlayerLevel: 0
