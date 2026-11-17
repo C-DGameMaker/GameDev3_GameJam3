@@ -31,8 +31,9 @@ public class UIManager : MonoBehaviour
     public void HideAllUI()
     {
         mainMenuUI.SetActive(false);
+        settingsUI.SetActive(false);
         pauseUI.SetActive(false);
-        gameObject.SetActive(false);
+        gamePlayUI.SetActive(false);
         inventoryUI.SetActive(false);
     }
 
