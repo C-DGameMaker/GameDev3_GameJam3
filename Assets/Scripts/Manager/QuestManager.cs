@@ -66,7 +66,8 @@ public class QuestManager : MonoBehaviour
                 OnObjectiveProgress?.Invoke(obj.questObjective.objectiveName, obj.currentAmount,obj.questObjective.requiredAmount);
             }
 
-            if (quest.AllObjectivesComplete && !quest.activeQuest) CompleteQuest(quest);
+            if (quest.AllObjectivesComplete && !quest.completed) CompleteQuest(quest);
+            
         }
     }
 
