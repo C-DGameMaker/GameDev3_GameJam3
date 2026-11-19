@@ -6,6 +6,7 @@ using static UnityEngine.Rendering.DebugUI;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController movementController;
     [Header("Player Movement Variables")]
 
     [SerializeField] Rigidbody playerRB;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] IInteractable targetInteractable;
     void Start()
     {
+        movementController = this;
        if(playerRB == null)
        {
             playerRB = GetComponent<Rigidbody>();

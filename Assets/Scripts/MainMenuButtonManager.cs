@@ -5,7 +5,7 @@ public class MainMenuButtonManager : MonoBehaviour
 {
     public GameObject firstButton;
 
-    private void Awake()
+    private void Start()
     {
         GameManager.Instance.eventSystemHandler.SetButton(firstButton);
     }

@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Interactable_QuestNPC : MonoBehaviour, IInteractable
 {
-    public GameManager gameManager;
-    public string[] sentences;
+    private string[] sentences;
 
     public string[] preQuestDialogue;
     public string[] duringQuestDialogue;

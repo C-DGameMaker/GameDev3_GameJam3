@@ -6,14 +6,11 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> dialogueQueue;
 
     public GameManager gameManager;
-    public PlayerController playerController;
 
     public bool inDialogue = false;
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
-
         dialogueQueue = new Queue<string>();
     }
 
@@ -21,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     {
         GameManager.Instance.uiManager.ShowDialoguePanel();
         inDialogue = true;
+        PlayerController.movementController.canMove = false;
 
         foreach (string currentString in sentences)
         {
@@ -49,5 +47,6 @@ public class DialogueManager : MonoBehaviour
         dialogueQueue.Clear();
         GameManager.Instance.uiManager.HideDialoguePanel();
         inDialogue = false;
+        PlayerController.movementController.canMove = true;
     }
 }
