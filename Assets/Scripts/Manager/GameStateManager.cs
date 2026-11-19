@@ -16,8 +16,8 @@ public class GameStateManager : MonoBehaviour
 {
     [Header("Game States")]
 
-    [SerializeField] GameStates currentState;
-    [SerializeField] GameStates previousState;
+    public GameStates currentState;
+    public GameStates previousState;
 
     private void Start()
     {
@@ -44,12 +44,17 @@ public class GameStateManager : MonoBehaviour
                 break;
 
             case GameStates.mainMenu:
+                GameManager.Instance.UIManager.HideAllUI();
                 break;
 
             case GameStates.gamePlay:
+                GameManager.Instance.UIManager.GameplayUI();
+                Time.timeScale = 1;
                 break;
 
             case GameStates.paused:
+                GameManager.Instance.UIManager.Pause();
+                Time.timeScale = 0;
                 break;
 
             case GameStates.gameWin:

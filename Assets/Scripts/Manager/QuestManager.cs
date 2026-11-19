@@ -78,6 +78,16 @@ public class QuestManager : MonoBehaviour
         quest.completed = true;
         activeQuests.Remove(quest.activeQuest.questName);
         completedQuestName.Add(quest.activeQuest.questName);
+
+        if(quest.activeQuest.reward.type == QuestRewardType.gold)
+        {
+            PlayerController.movementController.gold += quest.activeQuest.reward.amount;
+            GameManager.Instance.UIManager.UpdateGoldText();
+        }
+        else
+        {
+            Debug.Log("Quest Completed");
+        }
         Debug.Log("CompletedQuest");
     }
 }

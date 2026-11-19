@@ -357,7 +357,19 @@ MonoBehaviour:
     m_ActionId: 34cec02e-7e43-4165-8cda-c56c0a9f44e1
     m_ActionName: 'Movement/Jump[/Keyboard/shift]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4236256159738676990}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PauseToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 09996893-7741-460a-ac2d-4e3681e338b8
     m_ActionName: 'Movement/Paused[/Keyboard/escape]'
   - m_PersistentCalls:
@@ -493,6 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a889780e20135ea4d9f680ad8eacd89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  itemGotten: []
 --- !u!114 &4236256159738676990
 MonoBehaviour:
   m_ObjectHideFlags: 0

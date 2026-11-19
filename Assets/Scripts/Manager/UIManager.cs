@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject mainMenuUI;
     public GameObject settingsUI;
     public GameObject pauseUI;
     public GameObject gamePlayUI;
+    public TextMeshProUGUI goldAmount;
     public GameObject inventoryUI;
 
     public GameObject dialoguePanel;
@@ -30,7 +30,6 @@ public class UIManager : MonoBehaviour
 
     public void HideAllUI()
     {
-        mainMenuUI.SetActive(false);
         settingsUI.SetActive(false);
         pauseUI.SetActive(false);
         gamePlayUI.SetActive(false);
@@ -40,6 +39,12 @@ public class UIManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("GameplayScene");
+    }
+
+    public void GameplayUI()
+    {
+        HideAllUI();
+        gamePlayUI.SetActive(true);
     }
 
     public void Settings()
@@ -58,6 +63,11 @@ public class UIManager : MonoBehaviour
     {
         HideAllUI();
         inventoryUI.SetActive(true);
+    }
+
+    public void UpdateGoldText()
+    {
+        goldAmount.text = "Gold: " + PlayerController.movementController.gold;
     }
 
     public void Quit()

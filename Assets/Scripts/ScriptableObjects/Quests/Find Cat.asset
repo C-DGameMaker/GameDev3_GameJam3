@@ -24,5 +24,6 @@ MonoBehaviour:
     requiredAmount: 1
   reward:
     rewardDescription: Gold
-    gold: 500
+    type: 1
+    amount: 50
   requiredCompletedQuests: []

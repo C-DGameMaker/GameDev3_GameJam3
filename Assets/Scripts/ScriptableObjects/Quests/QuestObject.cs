@@ -31,8 +31,10 @@ public class QuestObjective
 [System.Serializable]
 public class QuestReward
 {
+    public string rewardName;
     public string rewardDescription;
-    public int gold;
+    public QuestRewardType type;
+    public int amount;
 }
 
 public enum QuestObjectiveType
@@ -42,4 +44,11 @@ public enum QuestObjectiveType
     Interact,
     Attack
 }
+
+public enum QuestRewardType
+{
+    item,
+    gold
+}
+
 

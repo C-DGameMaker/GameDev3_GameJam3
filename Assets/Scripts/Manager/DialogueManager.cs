@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(string[] sentences)
     {
-        GameManager.Instance.uiManager.ShowDialoguePanel();
+        GameManager.Instance.UIManager.ShowDialoguePanel();
         inDialogue = true;
         PlayerController.movementController.canMove = false;
 
@@ -38,14 +38,14 @@ public class DialogueManager : MonoBehaviour
         }
         else if (dialogueQueue.Count > 0)
         {
-            GameManager.Instance.uiManager.SetDialogueText(dialogueQueue.Dequeue());
+            GameManager.Instance.UIManager.SetDialogueText(dialogueQueue.Dequeue());
         }
     }
 
     private void EndDialogue()
     {
         dialogueQueue.Clear();
-        GameManager.Instance.uiManager.HideDialoguePanel();
+        GameManager.Instance.UIManager.HideDialoguePanel();
         inDialogue = false;
         PlayerController.movementController.canMove = true;
     }

@@ -13,6 +13,7 @@ public class MainMenuButtonManager : MonoBehaviour
     public void StartButton()
     {
         SceneManager.LoadScene("GameplayScene");
+        GameManager.Instance.gameStateManager.SetGameStates(GameStates.gamePlay);
     }
 
     public void QuitButton()

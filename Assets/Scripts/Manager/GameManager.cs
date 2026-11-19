@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Managers")]
     public DialogueManager dialogueManager;
-    public UIManager uiManager;
+    public UIManager UIManager;
     public SaveDataManager saveDataManager;
     public GameStateManager gameStateManager;
     public EventSystemHandler eventSystemHandler;

@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [Header("Player Interaction Variables")]
     public bool canMove;
 
+    [Header("Player Other")]
+    public int gold;
+
     [SerializeField] IInteractable targetInteractable;
     void Start()
     {
@@ -101,6 +104,22 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+    #endregion
+
+    #region Other stuff
+    public void PauseToggle()
+    {
+        if (GameManager.Instance.gameStateManager.currentState == GameStates.gamePlay)
+        {
+            if (GameManager.Instance.gameStateManager.currentState == GameStates.paused) return;
+            GameManager.Instance.gameStateManager.SetGameStates(GameStates.paused);
+        }
+        else if (GameManager.Instance.gameStateManager.currentState == GameStates.paused)
+        {
+            if (GameManager.Instance.gameStateManager.currentState == GameStates.gamePlay) return;
+            GameManager.Instance.gameStateManager.SetGameStates(GameStates.gamePlay);
+        }
     }
     #endregion
 }
