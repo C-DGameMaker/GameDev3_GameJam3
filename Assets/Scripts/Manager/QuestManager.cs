@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
     public QuestObject[] allQuests;
 
     public Dictionary<string, ActiveQuest> activeQuests = new();
-    public HashSet<string> completedQuestName = new();
+    public List<string> completedQuestName = new();
 
 
     public void Awake()
@@ -49,23 +49,21 @@ public class QuestManager : MonoBehaviour
     public void ReportProgress(QuestObjectiveType type, string targetName, int amount = 1)
     {
         List<ActiveQuest> questsToComplete = new List<ActiveQuest>();
-        foreach (var kvp in activeQuests)
+        foreach (var curentQuests in activeQuests)
         {
-            ActiveQuest quest = kvp.Value;
-            foreach (var obj in quest.objectives)
+            ActiveQuest quest = curentQuests.Value;
+            foreach (var objective in quest.objectives)
             {
-                if (obj.isComplete) continue;
-                if (obj.questObjective.type != type) continue;
-                if (obj.questObjective.targetName != targetName) continue;
+                if (objective.isComplete) continue;
+                if (objective.questObjective.type != type) continue;
+                if (objective.questObjective.targetName != targetName) continue;
 
-                obj.currentAmount = Mathf.Min(obj.currentAmount + amount, obj.questObjective.requiredAmount);
+                objective.currentAmount = Mathf.Min(objective.currentAmount + amount, objective.questObjective.requiredAmount);
                 
             }
 
-            if (quest.AllObjectivesComplete && !quest.completed)
-            {
-                questsToComplete.Add(quest);
-            }
+            if (quest.AllObjectivesComplete && !quest.completed) questsToComplete.Add(quest);
+            
 
         }
 
