@@ -11,9 +11,6 @@ public class QuestManager : MonoBehaviour
 
     public Dictionary<string, ActiveQuest> activeQuests = new();
     public HashSet<string> completedQuestName = new();
-    public event Action<ActiveQuest> OnQuestAccepted;
-    public event Action<ActiveQuest> OnQuestCompleted;
-    public event Action<string, int, int> OnObjectiveProgress;
 
 
     public void Awake()
@@ -46,12 +43,12 @@ public class QuestManager : MonoBehaviour
 
         ActiveQuest accepetedQuest = new ActiveQuest(quest);
         activeQuests[quest.questName] = accepetedQuest;
-        OnQuestAccepted?.Invoke(accepetedQuest);
         Debug.Log("AcceptedQuest");
     }
 
     public void ReportProgress(QuestObjectiveType type, string targetName, int amount = 1)
     {
+        List<ActiveQuest> questsToComplete = new List<ActiveQuest>();
         foreach (var kvp in activeQuests)
         {
             ActiveQuest quest = kvp.Value;
@@ -63,11 +60,18 @@ public class QuestManager : MonoBehaviour
 
                 obj.currentAmount = Mathf.Min(obj.currentAmount + amount, obj.questObjective.requiredAmount);
                 
-                OnObjectiveProgress?.Invoke(obj.questObjective.objectiveName, obj.currentAmount,obj.questObjective.requiredAmount);
             }
 
-            if (quest.AllObjectivesComplete && !quest.completed) CompleteQuest(quest);
-            
+            if (quest.AllObjectivesComplete && !quest.completed)
+            {
+                questsToComplete.Add(quest);
+            }
+
+        }
+
+        foreach (ActiveQuest quest in questsToComplete)
+        {
+            CompleteQuest(quest);
         }
     }
 
@@ -76,7 +80,6 @@ public class QuestManager : MonoBehaviour
         quest.completed = true;
         activeQuests.Remove(quest.activeQuest.questName);
         completedQuestName.Add(quest.activeQuest.questName);
-        OnQuestCompleted?.Invoke(quest);
         Debug.Log("CompletedQuest");
     }
 }

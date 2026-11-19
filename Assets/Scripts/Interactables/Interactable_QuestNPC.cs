@@ -21,24 +21,45 @@ public class Interactable_QuestNPC : MonoBehaviour, IInteractable
         {
             GameManager.Instance.dialogueManager.StartDialogue(sentences);
         }
-
-        if (!QuestManager.questInstance.activeQuests.ContainsKey(quest.questName))
-        {
-            QuestManager.questInstance.AcceptQuest(quest);
-        }
     }
 
     public void CheckQuestStatus()
     {
+        if (QuestManager.questInstance.completedQuestName.Contains(quest.questName))
+        {
+            sentences = postQuestDialogue;
+            return;
+        }
+
         if (!QuestManager.questInstance.activeQuests.ContainsKey(quest.questName))
         {
             sentences = preQuestDialogue;
+            QuestManager.questInstance.AcceptQuest(quest);
+            return;
         }
-        else if(QuestManager.questInstance.completedQuestName.Contains(quest.questName))
+
+        foreach (string s in Inventory.playerInventory.itemGotten)
         {
-            sentences = postQuestDialogue;
+            foreach (var obv in quest.objectives)
+            {
+                if (s == obv.targetName)
+                {
+                    QuestManager.questInstance.ReportProgress(QuestObjectiveType.Collect, s);
+
+                    if (QuestManager.questInstance.completedQuestName.Contains(quest.questName))
+                    {
+                        sentences = finishQuestDialogue;
+                    }
+                    else
+                    {
+                        sentences = duringQuestDialogue;
+                    }
+
+                    return;
+                }
+            }
         }
-        
-        
+
+        sentences = duringQuestDialogue;
     }
 }
