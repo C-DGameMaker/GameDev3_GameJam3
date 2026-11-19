@@ -21,8 +21,10 @@ public class QuestObject : ScriptableObject
 [System.Serializable]
 public class QuestObjective
 {
+    public string objectiveName;
     public string objectiveDescription;
     public QuestObjectiveType type;
+    public string targetName;
     public int requiredAmount;
 }
 
