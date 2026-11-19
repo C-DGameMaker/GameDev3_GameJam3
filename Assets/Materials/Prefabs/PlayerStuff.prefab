@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 4854007715686181327}
   - component: {fileID: 1679967737350150072}
   - component: {fileID: 2320587394350352096}
+  - component: {fileID: 1021869570628501352}
   - component: {fileID: 4236256159738676990}
   m_Layer: 0
   m_Name: Player Caspule
@@ -480,6 +481,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1021869570628501352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835854761371891436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a889780e20135ea4d9f680ad8eacd89c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
 --- !u!114 &4236256159738676990
 MonoBehaviour:
   m_ObjectHideFlags: 0

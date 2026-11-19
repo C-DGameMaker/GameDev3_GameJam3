@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a24296cc793ee438908efd93ae3b97, type: 3}
   m_Name: Find Cat
   m_EditorClassIdentifier: Assembly-CSharp::QuestObject
-  questName: 
-  questDescription: 
-  objectives: []
+  questName: Find the Witches missing cat
+  questDescription: The local witch has a problem, her familar aka her cat has gone
+    missing, would you be a dear and bring her back?
+  objectives:
+  - objectiveName: Find Kitty cat
+    objectiveDescription: 'She has ran off somehwere in the village, find her and
+      bring her back. '
+    type: 0
+    targetName: Cat
+    requiredAmount: 1
   reward:
-    rewardDescription: 
-    gold: 0
+    rewardDescription: Gold
+    gold: 500
   requiredCompletedQuests: []
