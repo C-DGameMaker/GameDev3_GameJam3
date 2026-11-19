@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
         if (other.TryGetComponent(out IInteractable foundInteractable))
         {
             targetInteractable = foundInteractable;
+            targetInteractable.ShowPrompt();
         }
     }
 
@@ -85,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.TryGetComponent(out IInteractable foundInteractable))
         {
+            targetInteractable.HidePrompt();
             targetInteractable = null;
         }
     }

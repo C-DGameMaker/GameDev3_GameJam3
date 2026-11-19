@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Interactable_QuestNPC : MonoBehaviour, IInteractable
@@ -9,6 +10,16 @@ public class Interactable_QuestNPC : MonoBehaviour, IInteractable
     public string[] finishQuestDialogue;
     public string[] postQuestDialogue;
     public QuestObject quest;
+    public TextMeshProUGUI promptText;
+
+    public void ShowPrompt()
+    {
+        promptText.text = "E";
+    }
+    public void HidePrompt()
+    {
+        promptText.text = "";
+    }
     public void Interact()
     {
         CheckQuestStatus();
