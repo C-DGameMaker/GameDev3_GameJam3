@@ -1,9 +1,15 @@
+using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
-
-public class InteractableNPC : MonoBehaviour
+public class InteractableNPC : MonoBehaviour, IInteractable
 {
-    public GameManager gameManager;
     public string[] sentences = null;
+    public TextMeshProUGUI promptText;
+
+    public void HidePrompt()
+    {
+        promptText.text = "";
+    }
 
     public void Interact()
     {
@@ -15,5 +21,10 @@ public class InteractableNPC : MonoBehaviour
         {
             GameManager.Instance.dialogueManager.StartDialogue(sentences);
         }
+    }
+
+    public void ShowPrompt()
+    {
+        promptText.text = "E";
     }
 }

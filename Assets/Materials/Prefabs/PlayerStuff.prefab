@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 1794730010440627130}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052596, y: -0, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: -0.65183, y: 1.1039891, z: -5.768935}
+  m_LocalPosition: {x: -0.65183, y: 2.3722, z: -10.501967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   playerCharacter: {fileID: 5601941668848727491}
-  offset: {x: 0, y: 1, z: -7}
-  distanceFromPlayer: 0.75
+  offset: {x: 0, y: 1, z: -10}
+  distanceFromPlayer: 1
 --- !u!1 &2835854761371891436
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
   m_LocalPosition: {x: -0.65182495, y: -0.123270035, z: 1.4381104}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 64208595808344571}
@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55b42e2d64d5b8a44b1f8b45d6a8df14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.20000029
+      value: -0.3000002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55b42e2d64d5b8a44b1f8b45d6a8df14, type: 3}
       propertyPath: m_LocalPosition.z
