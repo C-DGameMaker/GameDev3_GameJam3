@@ -1042,13 +1042,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable_QuestNPC
   preQuestDialogue:
-  - Help Find my cat
+  - 'Cauldron, Cauldron where are you '
+  - Oh you there, have you seen a black cat
+  - Shes my sweet baby girl Cauldron, I can't find her anywhere
+  - Oh! you'll help look for her, oh thank you dear adventurer
   duringQuestDialogue:
-  - Please find my cat
+  - Please find her, she doesn't normally get lost
+  - Though she does have a tendency to wander
+  - And she has been seen by the bridge
+  - But she wouldn't cross it, would she?
   finishQuestDialogue:
-  - Thank you for finding my cat
+  - 'OH My cauldron my sweet cauldron. '
+  - 'There you are my little precious, yes yes go inside. '
+  - Oh thank you brave adventurer for finding my cat
+  - Here, this is all I can spare
   postQuestDialogue:
-  - My Cat is home
+  - Cauldron has been put back inside the house for now
+  - Apologies but I don't need her running away again
   quest: {fileID: 11400000, guid: 52c58020e81648b41825c1bfc988024f, type: 2}
   promptText: {fileID: 693145632}
 --- !u!136 &999165481
