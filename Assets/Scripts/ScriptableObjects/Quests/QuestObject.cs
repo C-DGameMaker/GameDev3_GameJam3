@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Net.Http.Headers;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Quest Data", menuName = "Quest")]
