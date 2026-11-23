@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateGoldText()
     {
-        goldAmount.text = "Gold: " + PlayerController.movementController.gold;
+        goldAmount.text = "Current Gold: " + PlayerController.movementController.gold;
     }
 
     public void Quit()
