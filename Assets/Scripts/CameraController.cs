@@ -13,14 +13,16 @@ public class CameraController : MonoBehaviour
             Debug.Log("Player is null");
         }
 
-        offset = transform.localPosition;
-        
+        offset = Quaternion.Inverse(playerCharacter.rotation) *
+                 (transform.position - playerCharacter.position);
+
     }
 
     private void LateUpdate()
     {
         Vector3 cameraOffset = playerCharacter.rotation * offset;
-
         transform.position = playerCharacter.position + cameraOffset;
+
+        transform.LookAt(playerCharacter.position);
     }
 }
