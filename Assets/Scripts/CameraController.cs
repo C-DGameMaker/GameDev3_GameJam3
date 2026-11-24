@@ -4,8 +4,7 @@ public class CameraController : MonoBehaviour
 {
     [Header("Camera Controller")]
     public Transform playerCharacter;
-    public Vector3 offset = new Vector3(0, 3, -7);
-    public float distanceFromPlayer;
+    public Vector3 offset;
 
     private void Start()
     {
@@ -14,16 +13,14 @@ public class CameraController : MonoBehaviour
             Debug.Log("Player is null");
         }
 
+        offset = transform.localPosition;
+        
     }
 
     private void LateUpdate()
     {
-        Vector3 cameraOffset = playerCharacter.rotation * offset * distanceFromPlayer;
+        Vector3 cameraOffset = playerCharacter.rotation * offset;
 
         transform.position = playerCharacter.position + cameraOffset;
-
-        transform.LookAt(playerCharacter.position + Vector3.up * 1.5f);
-
-
     }
 }
