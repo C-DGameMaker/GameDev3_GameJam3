@@ -37,6 +37,12 @@ public class UIManager : MonoBehaviour
         inventoryUI.SetActive(false);
     }
 
+    public void MainMenu()
+    {
+        HideAllUI();
+        mainMenuUI.SetActive(true);
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("GameplayScene");
