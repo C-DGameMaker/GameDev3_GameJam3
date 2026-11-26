@@ -514,6 +514,7 @@ MonoBehaviour:
   movementInput: {x: 0, y: 0}
   turnSpeed: 150
   canMove: 0
+  playerAnimator: {fileID: 7245150950598177758}
   gold: 0
 --- !u!1001 &3882498491615563343
 PrefabInstance:
@@ -579,5 +580,10 @@ PrefabInstance:
 --- !u!4 &3633242387855255972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3ac43936c79bc7042a06fed0f4bf02ff, type: 3}
+  m_PrefabInstance: {fileID: 3882498491615563343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7245150950598177758 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 3ac43936c79bc7042a06fed0f4bf02ff, type: 3}
   m_PrefabInstance: {fileID: 3882498491615563343}
   m_PrefabAsset: {fileID: 0}

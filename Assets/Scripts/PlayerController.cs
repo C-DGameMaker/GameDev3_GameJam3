@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     [Header("Player Interaction Variables")]
     public bool canMove;
 
+    [Header("Player Interaction Variables")]
+    [SerializeField] Animator playerAnimator;
+    private int IsWalkingHash = Animator.StringToHash("IsWalking");
+    private int IsJumpingHash = Animator.StringToHash("IsJumping");
+
     [Header("Player Other")]
     public int gold;
 
@@ -31,7 +36,19 @@ public class PlayerController : MonoBehaviour
             playerRB = GetComponent<Rigidbody>();
        }
 
+       if(playerAnimator == null)
+       {
+            Debug.LogError("The animator should not be null");
+       }
+
         canMove = true;
+    }
+
+    public void FixedUpdate()
+    {
+        HandlePlayerMovement();
+        HandlePlayerTurning();
+        HandleAnimations();
     }
 
     #region Movement
@@ -43,13 +60,6 @@ public class PlayerController : MonoBehaviour
     public void OnTurn(InputAction.CallbackContext context)
     {
         turnInput = context.ReadValue<float>();
-        Debug.Log("Turn Input: " + turnInput);
-    }
-
-    public void FixedUpdate()
-    {
-        HandlePlayerMovement();
-        HandlePlayerTurning();
     }
 
     public void HandlePlayerTurning()
@@ -71,6 +81,7 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         if (Mathf.Abs(playerRB.linearVelocity.y) < 0.01f) playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        playerAnimator.SetBool(IsJumpingHash, true);
     }
     #endregion
 
@@ -104,6 +115,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+    #endregion
+
+    #region Animations
+
+    public void HandleAnimations()
+    {
+        if (movementInput != Vector2.zero) //Sets the animation for moving
+        {
+            playerAnimator.SetBool(IsWalkingHash, true);
+            playerAnimator.SetBool(IsJumpingHash, false);
+        }
+        else //Sets the animation for idle
+        {
+            playerAnimator.SetBool(IsWalkingHash, false);
+            playerAnimator.SetBool(IsJumpingHash, false);
+        }
     }
     #endregion
 
