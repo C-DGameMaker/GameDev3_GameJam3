@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 55b42e2d64d5b8a44b1f8b45d6a8df14
+guid: e9b7d9d6fd837f7419c63409ce9f2e96
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
   externalObjects: {}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -309,13 +309,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: PlayerModelRig(Clone)
+    - name: PlayerNoFace(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
-      parentName: PlayerModelRig(Clone)
+      parentName: PlayerNoFace(Clone)
       position: {x: -0.0040074997, y: -0.026118524, z: 0.031390693}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 85.71947, y: 85.71947, z: 85.71947}
@@ -323,6 +323,66 @@ ModelImporter:
       parentName: Armature
       position: {x: 0.0000063189864, y: 0.0000009536743, z: 0.008427773}
       rotation: {x: -0, y: -0.7071067, z: -0.7071068, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Knee_Jnt_L
+      parentName: Root_Jnt
+      position: {x: 0.0008647621, y: 0.000034884808, z: 0}
+      rotation: {x: -0.00000050959227, y: -0.000000027772852, z: 0.9985182, w: -0.05441845}
+      scale: {x: 1.0000346, y: 1, z: 1}
+    - name: Leg_Jnt_L
+      parentName: Knee_Jnt_L
+      position: {x: 9.733791e-13, y: 0.0026425296, z: 4.6966872e-14}
+      rotation: {x: 0.012146504, y: -0.0006620612, z: -0.054413512, w: 0.9984444}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Ball_Jnt_L
+      parentName: Leg_Jnt_L
+      position: {x: -3.6491192e-11, y: 0.003837838, z: 1.9027552e-11}
+      rotation: {x: -0.012164479, y: 0.000000023024542, z: -0.0000000090910435, w: 0.99992603}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Foot_Jnt_L
+      parentName: Ball_Jnt_L
+      position: {x: -5.541885e-12, y: 0.0010179878, z: 7.5660756e-13}
+      rotation: {x: -0.5412642, y: -0.00000072839094, z: 1.576638e-11, w: 0.8408526}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Toe_Jnt_L
+      parentName: Foot_Jnt_L
+      position: {x: -6.9919605e-11, y: 0.0011523302, z: 8.127188e-11}
+      rotation: {x: -0.21184114, y: -0.00000011647437, z: 0.00000020876114, w: 0.9773041}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toe_Jnt_L_end
+      parentName: Toe_Jnt_L
+      position: {x: -0, y: 0.0008884316, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Knee_Jnt_R
+      parentName: Root_Jnt
+      position: {x: -0.0008647621, y: 0.000034884808, z: 0}
+      rotation: {x: 0.00000050959227, y: -0.000000027772852, z: 0.9985182, w: 0.05441845}
+      scale: {x: 1.0000346, y: 1, z: 1}
+    - name: Leg_Jnt_R
+      parentName: Knee_Jnt_R
+      position: {x: -7.5479185e-11, y: 0.0026425289, z: 6.4446224e-14}
+      rotation: {x: 0.012146504, y: 0.0006620612, z: 0.054413512, w: 0.9984444}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Ball_Jnt_R
+      parentName: Leg_Jnt_R
+      position: {x: -3.8014612e-11, y: 0.003837838, z: 1.1930367e-11}
+      rotation: {x: -0.012164479, y: -0.000000023024542, z: 0.0000000090910435, w: 0.99992603}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Foot_Jnt_R
+      parentName: Ball_Jnt_R
+      position: {x: 5.541885e-12, y: 0.0010179877, z: 2.389861e-12}
+      rotation: {x: -0.5412642, y: 0.00000072839094, z: -1.576638e-11, w: 0.8408526}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Toe_Jnt_R
+      parentName: Foot_Jnt_R
+      position: {x: -4.586198e-12, y: 0.0011523302, z: 1.0123699e-10}
+      rotation: {x: -0.21184114, y: 0.00000011647437, z: -0.00000020876114, w: 0.9773041}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toe_Jnt_R_end
+      parentName: Toe_Jnt_R
+      position: {x: -0, y: 0.0008884316, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Waist_Jnt
       parentName: Root_Jnt
@@ -356,28 +416,28 @@ ModelImporter:
       scale: {x: 0.9999998, y: 1, z: 1}
     - name: Elbow_Jnt_L
       parentName: Shoulder_Jnt_L
-      position: {x: 8.945024e-10, y: 0.0013619609, z: -1.8545165e-14}
+      position: {x: 8.9451674e-10, y: 0.0013619609, z: -5.6132873e-15}
       rotation: {x: 0.00000004421121, y: 0.000000042758128, z: -0.012292714, w: 0.9999245}
       scale: {x: 0.99999994, y: 0.9999999, z: 1}
     - name: Arm_Jnt_L
       parentName: Elbow_Jnt_L
-      position: {x: 4.797962e-13, y: 0.0015189106, z: 8.114398e-14}
-      rotation: {x: 0.0000000029654397, y: 0.00000045444236, z: -0.0023715412, w: 0.9999972}
+      position: {x: 5.5789374e-13, y: 0.0015189106, z: 2.3234747e-14}
+      rotation: {x: 0.0000000029059974, y: 0.00000034750767, z: -0.0023715412, w: 0.9999972}
       scale: {x: 1, y: 1, z: 1}
     - name: Hand_Jnt_L
       parentName: Arm_Jnt_L
-      position: {x: 5.9739297e-10, y: 0.0019199263, z: 8.242295e-14}
-      rotation: {x: -0.000000018198374, y: -0.00000076876006, z: 0.028306047, w: 0.99959934}
+      position: {x: 5.972671e-10, y: 0.0019199263, z: 4.6611603e-14}
+      rotation: {x: -0.000000015166718, y: -0.0000007438955, z: 0.028306047, w: 0.99959934}
       scale: {x: 1, y: 1, z: 1}
     - name: Finger1_Jnt_L
       parentName: Hand_Jnt_L
-      position: {x: 2.979029e-10, y: 0.0008468354, z: 7.0805585e-14}
-      rotation: {x: -0.000000038175568, y: 0.00000031311146, z: -0.038359065, w: 0.999264}
+      position: {x: 2.978245e-10, y: 0.0008468354, z: 8.135714e-14}
+      rotation: {x: 0.000000024723093, y: 0.00000033262793, z: -0.03835907, w: 0.99926406}
       scale: {x: 1, y: 1, z: 1}
     - name: Finger2_Jnt_L
       parentName: Finger1_Jnt_L
-      position: {x: 4.53666e-13, y: 0.00057708606, z: 1.4495072e-14}
-      rotation: {x: -0.000000045247777, y: -0.00000015125447, z: -0.03562745, w: 0.9993652}
+      position: {x: 4.7221005e-13, y: 0.00057708606, z: 1.463718e-14}
+      rotation: {x: -0.0000000073357462, y: -0.000000109471486, z: -0.03562745, w: 0.9993652}
       scale: {x: 1, y: 1, z: 1}
     - name: Finger2_Jnt_L_end
       parentName: Finger2_Jnt_L
@@ -386,14 +446,14 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Thumb1_Jnt_L
       parentName: Arm_Jnt_L
-      position: {x: 0.00035211636, y: 0.0023118223, z: -0.00032174322}
-      rotation: {x: -0.333557, y: -0.36280072, z: 0.12343469, w: 0.86132413}
-      scale: {x: 1, y: 1, z: 0.99999994}
+      position: {x: 0.00035211633, y: 0.0023118216, z: -0.00032174325}
+      rotation: {x: -0.33355692, y: -0.36280078, z: 0.12343472, w: 0.8613242}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
     - name: Thumb2_Jnt_L
       parentName: Thumb1_Jnt_L
-      position: {x: 2.2351741e-10, y: 0.0003037876, z: -1.862645e-10}
-      rotation: {x: -0.0012248458, y: -0.015639694, z: 0.036497418, w: 0.99921066}
-      scale: {x: 1, y: 0.99999994, z: 1}
+      position: {x: 2.4214386e-10, y: 0.00030378703, z: -1.7695129e-10}
+      rotation: {x: -0.0012256205, y: -0.015639484, z: 0.03649824, w: 0.9992106}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
     - name: Thumb2_Jnt_L_end
       parentName: Thumb2_Jnt_L
       position: {x: -0, y: 0.00030467645, z: 0}
@@ -406,28 +466,28 @@ ModelImporter:
       scale: {x: 0.9999998, y: 1, z: 1}
     - name: Elbow_Jnt_R
       parentName: Shoulder_Jnt_R
-      position: {x: -5.219734e-10, y: 0.0013619609, z: -8.551382e-14}
-      rotation: {x: -0.000000020307608, y: -0.000000104657104, z: 0.012292324, w: 0.9999244}
+      position: {x: -5.2198773e-10, y: 0.0013619609, z: -1.5951684e-14}
+      rotation: {x: -0.00000002030761, y: -0.00000010465711, z: 0.012292325, w: 0.9999245}
       scale: {x: 0.99999994, y: 0.9999999, z: 1}
     - name: Arm_Jnt_R
       parentName: Elbow_Jnt_R
-      position: {x: -1.494914e-10, y: 0.0015189108, z: 5.0519586e-14}
-      rotation: {x: 0.0000000029654397, y: -0.00000045444236, z: 0.0023715412, w: 0.9999972}
+      position: {x: -1.4956951e-10, y: 0.0015189108, z: -3.1121773e-14}
+      rotation: {x: 0.0000000029059974, y: -0.00000034750767, z: 0.0023715412, w: 0.9999972}
       scale: {x: 1, y: 1, z: 1}
     - name: Hand_Jnt_R
       parentName: Arm_Jnt_R
-      position: {x: -2.993698e-10, y: 0.0019199263, z: 7.81597e-14}
-      rotation: {x: -0.000000018198374, y: 0.00000076876006, z: -0.028306047, w: 0.99959934}
+      position: {x: -2.9924394e-10, y: 0.0019199263, z: 5.1443292e-14}
+      rotation: {x: -0.000000015166718, y: 0.0000007438955, z: -0.028306047, w: 0.99959934}
       scale: {x: 1, y: 1, z: 1}
     - name: Finger1_Jnt_R
       parentName: Hand_Jnt_R
-      position: {x: 1.2030599e-13, y: 0.0008468349, z: 1.2104095e-13}
-      rotation: {x: 0.0000000049980025, y: -0.0000003146482, z: 0.038358353, w: 0.9992641}
+      position: {x: 1.9872659e-13, y: 0.0008468349, z: 3.82272e-14}
+      rotation: {x: 0.000000003974106, y: -0.00000039667466, z: 0.038358353, w: 0.9992641}
       scale: {x: 1, y: 1, z: 1}
     - name: Finger2_Jnt_R
       parentName: Finger1_Jnt_R
-      position: {x: -4.53666e-13, y: 0.00057708635, z: -2.913225e-14}
-      rotation: {x: -0.000000082360536, y: 0.00000019373618, z: 0.035626482, w: 0.9993652}
+      position: {x: -4.7221005e-13, y: 0.00057708635, z: -2.5863755e-14}
+      rotation: {x: -0.000000022348477, y: 0.00000012746283, z: 0.035626482, w: 0.9993652}
       scale: {x: 1, y: 1, z: 1}
     - name: Finger2_Jnt_R_end
       parentName: Finger2_Jnt_R
@@ -436,91 +496,21 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Thumb1_Jnt_R
       parentName: Arm_Jnt_R
-      position: {x: -0.00035211607, y: 0.002311822, z: -0.00032174322}
-      rotation: {x: -0.33355704, y: 0.36280057, z: -0.123434626, w: 0.8613242}
-      scale: {x: 1, y: 1, z: 0.99999994}
+      position: {x: -0.00035211604, y: 0.0023118216, z: -0.00032174325}
+      rotation: {x: -0.3335568, y: 0.36280018, z: -0.123434946, w: 0.8613244}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
     - name: Thumb2_Jnt_R
       parentName: Thumb1_Jnt_R
-      position: {x: -2.9802322e-10, y: 0.00030378715, z: -1.11758706e-10}
-      rotation: {x: -0.0012232065, y: 0.015639722, z: -0.03649836, w: 0.9992106}
-      scale: {x: 1, y: 0.99999994, z: 1}
+      position: {x: -1.6763806e-10, y: 0.00030378718, z: 4.6566126e-11}
+      rotation: {x: -0.0012240411, y: 0.015639635, z: -0.036496323, w: 0.99921066}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
     - name: Thumb2_Jnt_R_end
       parentName: Thumb2_Jnt_R
       position: {x: -0, y: 0.00030467645, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Knee_Jnt_L
-      parentName: Root_Jnt
-      position: {x: 0.0008647621, y: 0.000034884808, z: 0}
-      rotation: {x: -0.00000049906396, y: -0.00000002719906, z: 0.9985182, w: -0.05441845}
-      scale: {x: 1.0000346, y: 1, z: 1}
-    - name: Leg_Jnt_L
-      parentName: Knee_Jnt_L
-      position: {x: 9.532686e-13, y: 0.0026425296, z: 8.526513e-14}
-      rotation: {x: 0.012146504, y: -0.0006620505, z: -0.054413512, w: 0.9984444}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Ball_Jnt_L
-      parentName: Leg_Jnt_L
-      position: {x: -3.7541734e-11, y: 0.003837838, z: 9.1856835e-12}
-      rotation: {x: -0.01216448, y: 0.000000022946484, z: -0.000000009347861, w: 0.99992603}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: Foot_Jnt_L
-      parentName: Ball_Jnt_L
-      position: {x: -5.5482194e-12, y: 0.0010179878, z: 4.0140723e-13}
-      rotation: {x: -0.5412642, y: -1.7444062e-11, z: -0.00000046888138, w: 0.8408526}
-      scale: {x: 1, y: 1.0000001, z: 1}
-    - name: Toe_Jnt_L
-      parentName: Foot_Jnt_L
-      position: {x: -4.6133054e-12, y: 0.0011523302, z: 8.5609596e-11}
-      rotation: {x: -0.21184114, y: -1.2880566e-12, z: -0.00000018350713, w: 0.9773041}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Toe_Jnt_L_end
-      parentName: Toe_Jnt_L
-      position: {x: -0, y: 0.0008884316, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Knee_Jnt_R
-      parentName: Root_Jnt
-      position: {x: -0.0008647621, y: 0.000034884808, z: 0}
-      rotation: {x: 0.00000049906396, y: -0.00000002719906, z: 0.9985182, w: 0.05441845}
-      scale: {x: 1.0000346, y: 1, z: 1}
-    - name: Leg_Jnt_R
-      parentName: Knee_Jnt_R
-      position: {x: -7.545907e-11, y: 0.0026425289, z: 5.606182e-14}
-      rotation: {x: 0.012146504, y: 0.0006620505, z: 0.054413512, w: 0.9984444}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Ball_Jnt_R
-      parentName: Leg_Jnt_R
-      position: {x: -3.696407e-11, y: 0.003837838, z: 2.0941825e-12}
-      rotation: {x: -0.01216448, y: -0.000000022946484, z: 0.000000009347861, w: 0.99992603}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: Foot_Jnt_R
-      parentName: Ball_Jnt_R
-      position: {x: 5.5482194e-12, y: 0.0010179877, z: 2.0385687e-12}
-      rotation: {x: -0.5412642, y: 1.7444062e-11, z: 0.00000046888138, w: 0.8408526}
-      scale: {x: 1, y: 1.0000001, z: 1}
-    - name: Toe_Jnt_R
-      parentName: Foot_Jnt_R
-      position: {x: -6.98925e-11, y: 0.0011523302, z: 5.2970676e-11}
-      rotation: {x: -0.21184114, y: 1.2880566e-12, z: 0.00000018350713, w: 0.9773041}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Toe_Jnt_R_end
-      parentName: Toe_Jnt_R
-      position: {x: -0, y: 0.0008884316, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FaceSelect
-      parentName: Armature
-      position: {x: 0.004593706, y: -0.0013798076, z: 0.01613734}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: FaceSelect_end
-      parentName: FaceSelect
-      position: {x: -0, y: 0.0018463259, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: Player
-      parentName: PlayerModelRig(Clone)
+      parentName: PlayerNoFace(Clone)
       position: {x: -0.0048686033, y: 0.89027053, z: 0.02902044}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 0.8571946, y: 0.8571946, z: 0.8571946}
