@@ -13,8 +13,7 @@ public class CameraController : MonoBehaviour
             Debug.Log("Player is null");
         }
 
-        offset = Quaternion.Inverse(playerCharacter.rotation) *
-                 (transform.position - playerCharacter.position);
+        offset = Quaternion.Inverse(playerCharacter.rotation) * (transform.position - playerCharacter.position);
 
     }
 
